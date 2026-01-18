@@ -23,22 +23,22 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ImportRuntimeHints;
 
 /**
- * PetClinic Spring Boot Application.
- * Modified to support WAR deployment on external Tomcat.
+ * PetClinic Spring Boot Application. Modified to support WAR deployment on external
+ * Tomcat.
  */
 @SpringBootApplication
 @ImportRuntimeHints(PetClinicRuntimeHints.class)
 public class PetClinicApplication extends SpringBootServletInitializer {
 
-    // 1. This method tells Tomcat how to launch the Spring application
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(PetClinicApplication.class);
-    }
+	// 1. This method tells Tomcat how to launch the Spring application
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(PetClinicApplication.class);
+	}
 
-    // 2. This method is still used if you run it as a JAR locally
-    public static void main(String[] args) {
-        SpringApplication.run(PetClinicApplication.class, args);
-    }
+	// 2. This method is still used if you run it as a JAR locally
+	public static void main(String[] args) {
+		SpringApplication.run(PetClinicApplication.class, args);
+	}
 
 }
